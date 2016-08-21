@@ -35,6 +35,10 @@ aaptHostStaticLibs := \
 
 aaptCFlags := -Wall -Werror
 
+ifeq ($(TARGET_WANTS_AAPT_COMPRESS),true)
+aaptCFlags += -DAAPT_COMPRESS=1
+endif
+
 # ==========================================================
 # Build the host executable: aapt
 # ==========================================================
