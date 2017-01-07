@@ -30,4 +30,8 @@
 
     <!-- Name of that key handler class -->
     <string name="config_deviceKeyHandlerClass" translatable="false"></string>
+
+    <!-- Whether to show emergency button in power menu -->
+    <bool name="config_showEmergencyButtonInPowerMenu">false</bool>
+
 </resources>
