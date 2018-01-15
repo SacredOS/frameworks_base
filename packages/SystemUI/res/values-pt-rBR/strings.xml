@@ -731,7 +731,7 @@
     <string name="right_keycode" msgid="708447961000848163">"Código de tecla à direita"</string>
     <string name="left_icon" msgid="3096287125959387541">"Ícone à esquerda"</string>
     <string name="right_icon" msgid="3952104823293824311">"Ícone à direita"</string>
-    <string name="drag_to_add_tiles" msgid="230586591689084925">"Mantenha pressionado e arraste para adicionar blocos"</string>
+    <string name="drag_to_add_tiles" msgid="230586591689084925">"Toque ou pressione e arraste para adicionar blocos"</string>
     <string name="drag_to_remove_tiles" msgid="3361212377437088062">"Arraste aqui para remover"</string>
     <string name="drag_to_remove_disabled" msgid="2390968976638993382">"É preciso haver pelo menos seis blocos"</string>
     <string name="qs_edit" msgid="2232596095725105230">"Editar"</string>
