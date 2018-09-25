@@ -2125,10 +2125,12 @@ public class StatusBar extends SystemUI implements DemoMode,
         updateTheme();
     }
 
+    // Check for the dark system theme
     public boolean isUsingDarkTheme() {
         return ThemeAccentUtils.isUsingDarkTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId());
     }
 
+    // Check for the black system theme
     public boolean isUsingBlackTheme() {
         return ThemeAccentUtils.isUsingBlackTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId());
     }
@@ -3974,6 +3976,18 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
     }
 
+    // Switches theme accent from to another or back to stock
+    public void updateAccents() {
+        int accentSetting = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.ACCENT_PICKER, 0, mLockscreenUserManager.getCurrentUserId());
+        ThemeAccentUtils.updateAccents(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), accentSetting);
+    }
+
+    // Unload all the theme accents
+    public void unloadAccents() {
+        ThemeAccentUtils.unloadAccents(mOverlayManager, mLockscreenUserManager.getCurrentUserId());
+    }
+
     private void updateDozingState() {
         Trace.traceCounter(Trace.TRACE_TAG_APP, "dozing", mDozing ? 1 : 0);
         Trace.beginSection("StatusBar#updateDozingState");
@@ -5150,6 +5164,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.SYSTEM_THEME_STYLE),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.ACCENT_PICKER),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -5168,6 +5185,10 @@ public class StatusBar extends SystemUI implements DemoMode,
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.SYSTEM_THEME_STYLE))) {
                 updateTheme();
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.ACCENT_PICKER))) {
+                unloadAccents(); // Unload the accents when users request it
+                updateAccents(); // Update the accents when users request it
             }
         }
 
