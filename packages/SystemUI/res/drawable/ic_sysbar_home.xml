@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-     Copyright (C) 2018 The Android Open Source Project
+<!--  Copyright (C) 2018 The SacredOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,13 +13,18 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="oval"
-    android:useLevel="false">
-
-    <solid android:color="?attr/singleToneColor" />
-
-    <size
-        android:height="14dp"
-        android:width="14dp" />
-</shape>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="28dp"
+    android:height="28dp"
+    android:viewportHeight="96"
+    android:viewportWidth="96">
+    <path
+        android:fillColor="?attr/singleToneColor"
+        android:pathData="M36.74 44.066c7.037-2.656 15.054-2.926 22.096-0.154 2.62 1.055 5.38 2.129 7.306 4.288-10.293 8.115-25.819 7.484-36.284-0.018 1.785-2.08 4.386-3.16 6.883-4.116m9.992 2.067c-1.245 0.908-1.092 3.3 0.417 3.877 1.718 1.012 3.97-1.227 3.03-2.975-0.533-1.331-2.318-1.558-3.447-0.902m-8.943 2.178c1.797 1.208 3.797 2.067 5.938 2.441-0.681-1.478-0.749-3.098-0.687-4.699-1.785 0.669-3.564 1.362-5.251 2.258m15.219-2.374c0.098 1.736 0.104 3.527-0.835 5.073 2.252-0.583 4.46-1.344 6.496-2.478-1.717-1.203-3.71-1.884-5.661-2.595z" />
+    <path
+        android:fillColor="?attr/singleToneColor"
+        android:pathData="M47.992 4.378L10 70.208h76zm0.016 12.737L74.975 63.83H21.026z" />
+    <path
+        android:fillColor="?attr/singleToneColor"
+        android:pathData="M10 25.808l2.753 4.774 35.24 61.04L86 25.808zm11.026 6.36h53.948L48.008 78.886z" />
+</vector>
